@@ -1,0 +1,47 @@
+*{
+    font-family: "Roboto", sans-serif;
+}
+body{
+    padding-top: 70px;
+    background-image: url(https://wallpaperaccess.com/full/446984.jpg);
+}
+/*Header*/
+/*navbar*/
+img.img-fluid.d-block.mx-auto{
+    width: 100px;
+    height: 64px;
+  }
+input.form-control.btn-outline-dark.mr-sm-2{
+    width:100px;
+  }
+nav.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top{
+    padding-bottom: 30px;
+}
+
+/*container*/
+div.container{
+    position: relative;
+    top: 20px;
+}
+
+button.btn.btn-dark{
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+i.fas.fa-heart{
+    margin-left: 10px;
+    color: black;
+}
+
+
+/* Media-Queries */
+@media (min-width: 768px){
+    input.form-control.btn-outline-dark.mr-sm-2{
+          width:150px;
+        }
+}
+@media (min-width: 1025px){
+    input.form-control.btn-outline-dark.mr-sm-2{
+      width:250px;
+    }
+}

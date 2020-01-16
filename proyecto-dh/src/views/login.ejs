@@ -15,31 +15,54 @@
     <%- include('partials/headerNavbar') %>
 
     <!--/NavBar-->
+    <div class="container" style="margin-top: 100px;">
+        <div class="row">
+            <div class="col-sm">
+                <form action="/users/login" method="post">
 
-    <div class="container">
-        <div class="login-container">
-            <div class="register">
-                <h2>Inicia Sesión</h2>
-                <form action="">
-                    <input type="text" placeholder="Correo" class="correo">
-                    <input type="password" placeholder="Contraseña" class="pass">
-                    <input type="submit" class="submit" value="INICIAR SESIÓN">
-                    <p>¿No tienes una cuenta?<a class="link" href="register.ejs"> Registrate</a></p>
+                    <% if (typeof errors !== 'undefined') {
+            errors.map(function (error) { %>
+                    <p style="color: red;"><%= error.msg %></p>
+                    <% })
+                        }%>
+
+
+                    <div class="login-container">
+                        <div class="register">
+                            <h2>Inicia Sesión</h2>
+
+                            <div class="">
+                                <label for="">Ingrese su email</label>
+                                <input type="text" name="email" class="form-control"
+                                    value="<%= typeof data != 'undefined' ? data.email : '' %>">
+                            </div>
+                            <div class="">
+                                <label for="">Ingrese su contraseña</label>
+                                <input type="password" name="password" class="form-control"
+                                    value="<%= typeof data != 'undefined' ? data.password : '' %>">
+                            </div>
+                            <div class="">
+                                <button class="btn btn-dark" style="margin-bottom: 2%;">INICIAR SESIÓN</button>
+                            </div>
+                            <p>¿No tienes una cuenta?<a class="link" href="/users/register"> Registrate</a></p>
                 </form>
-            </div>
-            <div class="login">
-                <h2>Conectarse con</h2>
-                <div class="login-items">
-                    <button class="fb"><i class="fab fa-facebook-f"></i> Facebook</button>
-                    <button class="tw"><i class="fab fa-twitter"></i> Twitter</button>
-                    <button class="correo"><i class="fab fa-google-plus-g"></i> Google+</button>
-
-                </div>
             </div>
         </div>
     </div>
+    <div class="login">
+        <h2>Conectarse con</h2>
+        <div class="login-items">
+            <button class="fb"><i class="fab fa-facebook-f"></i> Facebook</button>
+            <button class="tw"><i class="fab fa-twitter"></i> Twitter</button>
+            <button class="correo"><i class="fab fa-google-plus-g"></i> Google+</button>
 
+        </div>
+    </div>
+    </div>
+    </div>
 
+    </form>
+    </div>
     <!-- Bootstrap core JavaScript -->
     <script src="/jquery/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>

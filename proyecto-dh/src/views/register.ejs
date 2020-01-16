@@ -15,24 +15,55 @@
     <%- include('partials/headerNavbar') %>
 
     <!--/NavBar-->
+    <div class="container" style="margin-top: 100px;">
+        <div class="row">
+            <div class="col-sm">
+                <form action="/users/register" method="post">
 
-    <div class="container">
-        <div class="login-container-2">
-            <div class="register-2">
-                <h2>Registrarse</h2>
-                <form action="">
-                    <input type="text" placeholder="Correo" class="correo">
-                    <input type="password" placeholder="Contraseña" class="pass">
-                    <input type="password" placeholder="Repetir Contraseña" class="repass">
-                    <input type="submit" class="submit" value="REGISTRARSE">
-                    <p>¿Ya tienes una cuenta?<a class="link" href="login.ejs"> Inicia Sesión</a></p>
+                    <% if (typeof errors !== 'undefined') {
+            errors.map(function (error) { %>
+                    <p style="color: red;"><%= error.msg %></p>
+                    <% })
+                        }%>
+
+                    <div class="container">
+                        <div class="login-container-2">
+                            <div class="register-2">
+                                <h2>Registrarse</h2>
+
+                                <div class="form-group">
+                                    <label for="">Ingrese su email</label>
+                                    <input type="text" name="email" class="form-control"
+                                        value="<%= typeof data != 'undefined' ? data.email : '' %>">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Ingrese su contraseña</label>
+                                    <input type="password" name="password" class="form-control"
+                                        value="<%= typeof data != 'undefined' ? data.password : '' %>">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Repita su contraseña</label>
+                                    <input type="password" name="password" class="form-control"
+                                        value="<%= typeof data != 'undefined' ? data.password : '' %>">
+                                </div>
+
+                                <div class="form-group">
+                                    <button class="btn btn-dark">REGISTRARSE</button>
+                                </div>
+                                <p>¿Ya tienes una cuenta?<a class="link" href="/users/login"> Inicia Sesión</a></p>
+
+                            </div>
+
                 </form>
             </div>
-            </form>
+        </div>
+    </div>
 
-            <!-- Bootstrap core JavaScript -->
-            <script src="/jquery/jquery.min.js"></script>
-            <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="/jquery/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

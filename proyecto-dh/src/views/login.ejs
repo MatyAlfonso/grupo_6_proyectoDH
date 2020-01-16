@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include('partials/headLogin') %>
+
+</head>
+
+
+<body>
+
+    <!-- Navbar -->
+
+    <%- include('partials/headerNavbar') %>
+
+    <!--/NavBar-->
+
+    <div class="container">
+        <div class="login-container">
+            <div class="register">
+                <h2>Inicia Sesión</h2>
+                <form action="">
+                    <input type="text" placeholder="Correo" class="correo">
+                    <input type="password" placeholder="Contraseña" class="pass">
+                    <input type="submit" class="submit" value="INICIAR SESIÓN">
+                    <p>¿No tienes una cuenta?<a class="link" href="register.ejs"> Registrate</a></p>
+                </form>
+            </div>
+            <div class="login">
+                <h2>Conectarse con</h2>
+                <div class="login-items">
+                    <button class="fb"><i class="fab fa-facebook-f"></i> Facebook</button>
+                    <button class="tw"><i class="fab fa-twitter"></i> Twitter</button>
+                    <button class="correo"><i class="fab fa-google-plus-g"></i> Google+</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/jquery/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

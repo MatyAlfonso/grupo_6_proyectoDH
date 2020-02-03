@@ -70,6 +70,9 @@ let usersController = {
     },
     welcome: function (req, res) {
         res.end(`Bienvenido: ` + req.session.usuarioLogueado.email);
+    },
+    profile : function(req,res){
+        res.render('profile');
     }
 }
 

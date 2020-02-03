@@ -10,11 +10,12 @@ const usersController = require('../controllers/usersController');
 /* Middleware require */
 const userValidationMiddleware = require('../middlewares/userValidationMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
+const profileMiddleware = require('../middlewares/profileMiddleware');
 
 /* GET users listing. */
 
 /*login*/
-router.get('/login', usersController.login);
+router.get('/login', profileMiddleware, usersController.login);
 router.post('/login', userValidationMiddleware, usersController.processLogin);
 
 /* register */
@@ -29,6 +30,9 @@ router.get('/check', function(req,res){
     res.send("El usuario logueado es: " + req.session.usuarioLogueado.email);
   }
 });
+
+/* profile */
+router.get('/profile', usersController.profile);
 
 /* welcome */
 router.get('/welcome', usersController.welcome);

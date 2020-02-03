@@ -6,6 +6,7 @@ var logger = require('morgan');
 var path = require('path');
 var methodOverride = require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 var session = require('express-session');
+var recordarmeMiddleware = require('./middlewares/recordarmeMiddleware');
 
 
 // ************ express() - (don't touch) ************
@@ -21,7 +22,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(methodOverride('_method')); // Para poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(session({secret: 'J&M'}))
-
+app.use(recordarmeMiddleware);
 
 // ************ Template Engine - (don't touch) ************
 
@@ -36,13 +37,13 @@ var homeRouter = require('./routes/home');
 var productDetailRouter = require('./routes/product-detail');
 var usersRouter = require('./routes/users');
 var chartRouter = require('./routes/chart');
-var recordarmeMiddleware = require("./middlewares/recordarmeMiddleware");
+
 
 app.use('/', homeRouter);
 app.use('/detalle-producto', productDetailRouter);
 app.use('/users', usersRouter);
 app.use('/chart',chartRouter);
-app.use(recordarmeMiddleware);
+
 // ************ DON'T TOUCH FROM HERE ************
 // catch 404 and forward to error handler
 

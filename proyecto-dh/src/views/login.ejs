@@ -41,13 +41,13 @@
                                 <input type="password" name="password" class="form-control"
                                     value="<%= typeof data != 'undefined' ? data.password : '' %>">
                             </div>
-                               
+
                             <div class="">
-                                
                                 <button class="btn btn-dark" style="margin-bottom: 2%;">INICIAR SESIÓN</button>
                             </div>
-                            <label for="">Recordarme</label>
-                                <input type="checkbox" name="recordarme"><br>
+                            <div class="">
+                                <label for="">Recordarme <input type="checkbox" name="recordarme" style="width: 10%;"></label>   
+                            </div>
                             <p>¿No tienes una cuenta?<a class="link" href="/users/register"> Registrate</a></p>
                 </form>
             </div>

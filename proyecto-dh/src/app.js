@@ -36,12 +36,13 @@ var homeRouter = require('./routes/home');
 var productDetailRouter = require('./routes/product-detail');
 var usersRouter = require('./routes/users');
 var chartRouter = require('./routes/chart');
+var recordarmeMiddleware = require("./middlewares/recordarmeMiddleware");
 
 app.use('/', homeRouter);
 app.use('/detalle-producto', productDetailRouter);
 app.use('/users', usersRouter);
 app.use('/chart',chartRouter);
-
+app.use(recordarmeMiddleware);
 // ************ DON'T TOUCH FROM HERE ************
 // catch 404 and forward to error handler
 

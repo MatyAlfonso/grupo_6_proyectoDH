@@ -3,6 +3,7 @@ const router = express.Router();
 const { check, validationResult, body } = require('express-validator');
 const fs = require('fs');
 const bcrypt = require('bcrypt');
+let db = require('../../database/models');
 
 let usersController = {
     register: function (req, res) {

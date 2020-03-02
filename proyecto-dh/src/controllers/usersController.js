@@ -90,7 +90,7 @@ let usersController = {
             })
         }*/
 
-        
+
     },
     welcome: function (req, res) {
         res.end(`Bienvenido: ` + req.session.usuarioLogueado.email);
@@ -118,7 +118,43 @@ let usersController = {
                 let users = results[0];
                 res.render("users-list", { users: users });
             })
+    },
+    edit: function (req, res) {
+        db.Users.findByPk(req.params.id)
+            .then(function (user) {
+                res.render('user-edit', { user: user })
+            })
+    },
+    update: function (req, res) {
+        let passwordEncriptada = bcrypt.hashSync(req.body.password, 10);
+        db.Users.update({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: passwordEncriptada,
+            image: req.body.image
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/users/edit/" + req.params.id);
+    },
+    detailDelete : function(req,res){
+        db.Users.findByPk(req.params.id)
+            .then(function (user) {
+                res.render('user-delete', { user: user })
+            })
+    },
+    delete: function (req, res) {
+        db.Users.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/users/register");
     }
+
 }
 
 module.exports = usersController;

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J&M Clothes</title>
+
+    <!-- Fuente bajada de google-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+    <!-- Font Awesome Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="/stylesheets/full-width-pics.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div>
+        <!-- Navbar -->
+        <%- include('partials/headerNavbar') %>
+    </div>
+
+    <h1 style="margin-top: 3%">Editar usuario: </h1>
+    <div style="padding : 2%; margin-bottom:5%">
+        <form action="/users/edit/<%=user.id%>" method="POST">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Primer nombre</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    name="firstName" value="<%= user.firstName %>">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Apellido</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="lastName" value="<%= user.lastName %>">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">E-mail</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="email" value="<%= user.email %>">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password" value="<%= user.password %>">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Imagen</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="price" value="<%= user.price %>">
+            </div>
+           <!-- <div class="form-group">
+                <label for="exampleInputPassword1">Imagen del producto</label>
+                <input type="image" class="form-control" id="exampleInputPassword1" name="image" value="">
+            </div> -->
+
+            <button type="submit" class="btn btn-dark btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+</body>
+
+</html>

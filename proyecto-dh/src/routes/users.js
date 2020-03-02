@@ -37,11 +37,18 @@ router.get('/profile', usersController.profile);
 /* welcome */
 router.get('/welcome', usersController.welcome);
 
-/* test db */
-router.get('/add',usersController.add);
-router.post('/add',usersController.create);
+/* test db: Create, Read */
+router.get('/add',usersController.add); //Ruta para la vista de creación de usuarios manualmente
+router.post('/add',usersController.create); //Ruta para crear usuarios manualmente
+router.get('/users-list', usersController.list); //Ruta para ver la lista de usuarios creados
 
-router.get('/users-list', usersController.list);
+/* Update */
+router.get('/edit/:id', usersController.edit);
+router.post('/edit/:id', usersController.update);
+
+/* Delete */
+router.get('/delete/:id', usersController.detailDelete);
+router.post('/delete/:id', usersController.delete);
 
 
 module.exports = router;

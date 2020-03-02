@@ -6,7 +6,11 @@ let sequelize = db.sequelize;
 let productsController = {
 
     detail: function (req, res) {
-        res.render('detalle-producto');
+        db.Products.findByPk(req.params.id)
+            .then(function (product) {
+                res.render('detalle-producto', { product: product })
+            })
+        
     },
     list: function (req, res) {
         sequelize.query("SELECT * FROM products")

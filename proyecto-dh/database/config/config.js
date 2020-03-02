@@ -2,8 +2,8 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "structure-db",
-    "host": "127.0.0.1",
+    "database": "structure",
+    "host": "localhost",
     "dialect": "mysql",
     "operatorsAliases": false
   },
@@ -11,7 +11,7 @@ module.exports = {
     "username": "root",
     "password": null,
     "database": "database_test",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql",
     "operatorsAliases": false
   },
@@ -19,7 +19,7 @@ module.exports = {
     "username": "root",
     "password": null,
     "database": "database_production",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql",
     "operatorsAliases": false
   }

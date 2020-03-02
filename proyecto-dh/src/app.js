@@ -34,13 +34,13 @@ app.set('views', path.join(__dirname, '/views'));
 // ************ Route System require and use() ************
 
 var homeRouter = require('./routes/home');
-var productDetailRouter = require('./routes/product-detail');
+var productsRouter = require('./routes/products');
 var usersRouter = require('./routes/users');
 var chartRouter = require('./routes/chart');
 
 
 app.use('/', homeRouter);
-app.use('/detalle-producto', productDetailRouter);
+app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 app.use('/chart',chartRouter);
 

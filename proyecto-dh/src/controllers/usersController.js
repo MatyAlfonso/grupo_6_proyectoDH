@@ -21,16 +21,28 @@ let usersController = {
 
         let passwordEncriptada = bcrypt.hashSync(req.body.password, 10);
 
+        db.Users.create({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: passwordEncriptada,
+            image: req.body.image
+        })
+
+        /* Implementado JSON
+        
         const newUser = {
             email: req.body.email,
             password: passwordEncriptada
         };
 
+        /*
         let users = fs.readFileSync('src/data/users.json', { encoding: 'utf-8' })
         users = JSON.parse(users);
         users.push(newUser);
         users = JSON.stringify(users);
         fs.writeFileSync('src/data/users.json', users);
+        */
 
         return res.redirect(301, '/users/login');
     },
@@ -38,7 +50,8 @@ let usersController = {
         return res.render('login');
     },
     processLogin: function (req, res) {
-        let result = validationResult(req);
+        /*let result = validationResult(req);
+        
         if (result.isEmpty()) {
             let usersJSON = fs.readFileSync('src/data/users.json', { encoding: 'utf-8' })
             let users;
@@ -47,6 +60,8 @@ let usersController = {
             } else {
                 users = JSON.parse(usersJSON);
             }
+
+
             let usuarioALoguearse;
             for (let i = 0; i < users.length; i++) {
                 if (users[i].email == req.body.email) {
@@ -63,9 +78,9 @@ let usersController = {
             }
             req.session.usuarioLogueado = usuarioALoguearse;
 
-            if (req.body.recordarme != undefined){
+            if (req.body.recordarme != undefined) {
                 res.cookie("recordarme",
-                usuarioALoguearse.email,{ maxAge: 60000 })
+                    usuarioALoguearse.email, { maxAge: 60000 })
             }
             res.redirect(301, '/users/welcome');
         } else {
@@ -73,13 +88,36 @@ let usersController = {
                 errors: result.errors,
                 data: req.body
             })
-        }
+        }*/
+
+        
     },
     welcome: function (req, res) {
         res.end(`Bienvenido: ` + req.session.usuarioLogueado.email);
     },
-    profile : function(req,res){
+    profile: function (req, res) {
         res.render('profile');
+    },
+    add: function (req, res) {
+        res.render('crearUsuario');
+    },
+    create: function (req, res) {
+        db.Users.create({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: req.body.password,
+            image: req.body.image
+        })
+
+        res.redirect("/users/users-list");
+    },
+    list: function (req, res) {
+        sequelize.query("SELECT * FROM users")
+            .then(function (results) {
+                let users = results[0];
+                res.render("users-list", { users: users });
+            })
     }
 }
 

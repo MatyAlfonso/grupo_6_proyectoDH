@@ -32,6 +32,18 @@
                                 <h2>Registrarse</h2>
 
                                 <div class="form-group">
+                                    <label for="">Ingrese su nombre</label>
+                                    <input type="text" name="firstName" class="form-control"
+                                        value="<%= typeof data != 'undefined' ? data.firstName : '' %>">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Ingrese su apellido</label>
+                                    <input type="text" name="lastName" class="form-control"
+                                        value="<%= typeof data != 'undefined' ? data.lastName : '' %>">
+                                </div>
+
+                                <div class="form-group">
                                     <label for="">Ingrese su email</label>
                                     <input type="text" name="email" class="form-control"
                                         value="<%= typeof data != 'undefined' ? data.email : '' %>">
@@ -41,6 +53,12 @@
                                     <label for="">Ingrese su contraseña</label>
                                     <input type="password" name="password" class="form-control"
                                         value="<%= typeof data != 'undefined' ? data.password : '' %>">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Cargar imagen de usuario</label>
+                                    <input type="image" name="image" class="form-control"
+                                        value="<%= typeof data != 'undefined' ? data.image : '' %>">
                                 </div>
 
                                 <div class="form-group">

@@ -37,5 +37,11 @@ router.get('/profile', usersController.profile);
 /* welcome */
 router.get('/welcome', usersController.welcome);
 
+/* test db */
+router.get('/add',usersController.add);
+router.post('/add',usersController.create);
+
+router.get('/users-list', usersController.list);
+
 
 module.exports = router;

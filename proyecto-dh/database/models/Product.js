@@ -25,14 +25,14 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         price: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.DOUBLE,
             allowNull: false,
             defaultValue: 0
-        },
+        }/*
         image: {
             type: dataTypes.BLOB,
             allowNull: false
-        }
+        }*/
     };
     let config = {
         tableName: "products",
@@ -51,5 +51,5 @@ module.exports = (sequelize, dataTypes) => {
         });
     }
 
-    //return Product;
+    return Product;
 }

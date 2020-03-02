@@ -3,11 +3,12 @@
 }
 
 body {
+  height: 100vh;
   padding-top: 56px;
   margin: 0;
   background: url(https://wallpaperaccess.com/full/446984.jpg) no-repeat center;   
   background-size: cover;
-
+  
 }
 /*NavBar*/
 img.img-fluid.d-block.mx-auto{
@@ -116,6 +117,14 @@ div.container.products-wrapper{
 .product-box:hover i{
   transform: rotate(360deg);
   box-shadow: 0 0 5px var(--green);
+}
+
+/* Footer */
+footer.py-5.bg-dark{
+  width: 100%;
+	border-top: 2px solid #000;
+	position: static;
+	bottom: 0;
 }
 
 

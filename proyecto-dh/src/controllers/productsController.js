@@ -51,8 +51,19 @@ let productsController = {
         })
         res.redirect("/products/edit/" + req.params.id);
     },
+    detailDelete : function(req,res){
+        db.Products.findByPk(req.params.id)
+            .then(function (product) {
+                res.render('product-delete', { product: product })
+            })
+    },
     delete: function (req, res) {
-
+        db.Products.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/products/products-list");
     }
 
 }

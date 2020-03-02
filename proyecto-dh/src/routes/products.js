@@ -19,4 +19,8 @@ router.post('/product-create', productsController.create);
 router.get('/edit/:id',productsController.edit);
 router.post('/edit/:id',productsController.update);
 
+//Borrado del producto
+router.get('/delete/:id',productsController.detailDelete);
+router.post('/delete/:id',productsController.delete);
+
 module.exports = router;

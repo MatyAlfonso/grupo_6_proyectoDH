@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         image: {
-            type: dataTypes.BLOB
+            type: dataTypes.STRING
         }
     };
     let config = {

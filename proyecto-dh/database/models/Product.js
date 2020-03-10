@@ -28,11 +28,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DOUBLE,
             allowNull: false,
             defaultValue: 0
-        }/*
+        },
         image: {
-            type: dataTypes.BLOB,
+            type: dataTypes.STRING,
             allowNull: false
-        }*/
+        }
     };
     let config = {
         tableName: "products",

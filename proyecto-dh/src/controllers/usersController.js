@@ -98,6 +98,19 @@ let usersController = {
     profile: function (req, res) {
         res.render('profile');
     },
+    editProfile: function (req, res) {
+        db.Users.update({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            password: passwordEncriptada,
+            image: req.body.image
+        }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+        res.redirect("/users/profile");
+    },
     add: function (req, res) {
         res.render('crearUsuario');
     },
@@ -134,13 +147,13 @@ let usersController = {
             password: passwordEncriptada,
             image: req.body.image
         }, {
-            where: {
-                id: req.params.id
-            }
-        })
+                where: {
+                    id: req.params.id
+                }
+            })
         res.redirect("/users/edit/" + req.params.id);
     },
-    detailDelete : function(req,res){
+    detailDelete: function (req, res) {
         db.Users.findByPk(req.params.id)
             .then(function (user) {
                 res.render('user-delete', { user: user })

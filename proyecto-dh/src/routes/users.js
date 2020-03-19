@@ -50,5 +50,8 @@ router.post('/edit/:id', usersController.update);
 router.get('/delete/:id', usersController.detailDelete);
 router.post('/delete/:id', usersController.delete);
 
+/*logout*/
+router.get('/logout', usersController.logout);
+
 
 module.exports = router;

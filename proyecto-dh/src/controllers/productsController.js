@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 let db = require('../../database/models');
-let sequelize = db.sequelize;
+let _= require('underscore');
 
 let productsController = {
 
@@ -13,9 +13,10 @@ let productsController = {
         
     },
     list: function (req, res) {
-        sequelize.query("SELECT * FROM products")
+        db.Products.findAll({raw : true})
             .then(function (results) {
-                let products = results[0];
+                let products = _.chunk(results, 3);
+                console.log(products);
                 res.render('products-list', { products: products });
             })
 

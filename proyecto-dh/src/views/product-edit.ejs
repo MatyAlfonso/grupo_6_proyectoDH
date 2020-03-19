@@ -31,29 +31,33 @@
         <form action="/products/edit/<%=product.id%>" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1">Nombre del producto</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    name="name" value="<%= product.name %>">
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name"
+                    value="<%= product.name %>">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Descripción del producto</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" name="description" value="<%= product.description %>">
+                <input type="text" class="form-control" id="exampleInputPassword1" name="description"
+                    value="<%= product.description %>">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Categoría del producto</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" name="category" value="<%= product.category %>">
+                <input type="text" class="form-control" id="exampleInputPassword1" name="category"
+                    value="<%= product.category %>">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Color del producto</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" name="colors" value="<%= product.colors %>">
+                <input type="text" class="form-control" id="exampleInputPassword1" name="colors"
+                    value="<%= product.colors %>">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Precio del producto</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" name="price" value="<%= product.price %>">
+                <input type="text" class="form-control" id="exampleInputPassword1" name="price"
+                    value="<%= product.price %>">
             </div>
-           <!-- <div class="form-group">
+            <div class="form-group">
                 <label for="exampleInputPassword1">Imagen del producto</label>
-                <input type="image" class="form-control" id="exampleInputPassword1" name="image" value="">
-            </div> -->
+                <input type="text" class="form-control" id="exampleInputPassword1" name="image" value="<%= product.image %>">
+            </div>
 
             <button type="submit" class="btn btn-dark btn-primary">Submit</button>
         </form>

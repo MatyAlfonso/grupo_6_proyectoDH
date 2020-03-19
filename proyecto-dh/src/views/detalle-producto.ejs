@@ -31,7 +31,7 @@
 <body>
 
   <!-- Navigation -->
-  
+
   <%- include('partials/headerNavbar') %>
 
   <!-- Page Content -->
@@ -40,7 +40,7 @@
     <div class="row">
 
       <div class="col-lg-3">
-        <h1 class="my-4">J&M Clothes</h1>
+        <h1 class="my-4"><%= product.name %></h1>
         <div class="list-group">
           <a href="#" class="btn btn-dark btn-outline-dark list-group-item active">Foto 1</a>
           <a href="#" class="btn btn-dark btn-outline-dark list-group-item">Foto 2</a>
@@ -52,12 +52,10 @@
       <div class="col-lg-9">
 
         <div class="card mt-4">
-          <img class="card-img-top img-fluid"
-            src="https://www.levi.com.ar/media/catalog/product/cache/179/image/500x750/9df78eab33525d08d6e5fb8d27136e95/l/e/levis_6534777850_0762_1.jpg"
-            alt="">
+          <img class="card-img-top img-fluid" src="/images/products/<%= product.image %>" alt="foto del producto">
           <div class="card-body">
             <h3 class="card-title"><%= product.name %></h3>
-            <h4><%= product.price %></h4>
+            <h4>$<%= product.price %></h4>
             <a href="#"><button type="button" class="btn btn-dark">Agregar al carrito</button></a>
             <a href="#"><i class="fas fa-heart"></i></a>
             <p class="card-text"><%= product.description %></p>

@@ -10,6 +10,12 @@ body {
   background-size: cover;
   
 }
+a {
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+}
+
 /*NavBar*/
 img.img-fluid.d-block.mx-auto{
   width: 100px;

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J&M Clothes</title>
+
+    <!-- Fuente bajada de google-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+    <!-- Font Awesome Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="/stylesheets/full-width-pics.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div>
+        <!-- Navbar -->
+        <%- include('partials/headerNavbar') %>
+    </div>
+
+    <h1 style="margin-top: 2%">Mujeres</h1>
+    <div>
+
+
+        <% products.forEach(function(fila){ %>
+        <div class="card-deck">
+            <% fila.forEach(function(product){ %>
+            <div class="card">
+                <img src="/images/products/<%= product.image %>">
+                <div class="card-body">
+                    <h5 class="card-title"><%= product.name %></h5>
+                    <p class="card-text">$<%= product.price %></p>
+                    <button type="button" class="btn btn-dark"><a href="/products/product-detail/<%= product.id %>">Ver más</a></button>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+        <% }) %>
+
+
+
+
+    </div>
+
+    <!-- Footer <%- include('partials/footer') %> -->
+
+</body>
+
+</html>

@@ -8,8 +8,18 @@ var productsController = require('../controllers/productsController');
 // Detalle del producto
 router.get('/product-detail/:id', productsController.detail);
 
+/////////////////////////////////////////////////////////////////////////////////////
 //Listado de los productos
 router.get('/products-list', productsController.list);
+//Listado de los productos hombres
+router.get('/men', productsController.listMen);
+//Listado de los productos mujeres
+router.get('/women', productsController.listWomen);
+//Listado de los productos kids
+router.get('/kids', productsController.listKids);
+//Listado de los productos oferta
+router.get('/sale', productsController.listSale);
+/////////////////////////////////////////////////////////////////////////////////////
 
 //Creación del producto
 router.get('/product-create',productsController.add);

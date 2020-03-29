@@ -21,6 +21,62 @@ let productsController = {
             })
 
     },
+    listMen: function (req, res) {
+        db.Products.findAll({
+            where: {
+              category: 'Hombres'
+            }
+          },
+          {raw : true})
+            .then(function (results) {
+                let products = _.chunk(results, 3);
+                console.log(products);
+                res.render('men', { products: products });
+            })
+
+    },
+    listWomen: function (req, res) {
+        db.Products.findAll({
+            where: {
+              category: 'Mujeres'
+            }
+          },
+          {raw : true})
+            .then(function (results) {
+                let products = _.chunk(results, 3);
+                console.log(products);
+                res.render('women', { products: products });
+            })
+
+    },
+    listKids: function (req, res) {
+        db.Products.findAll({
+            where: {
+              category: 'Kids'
+            }
+          },
+          {raw : true})
+            .then(function (results) {
+                let products = _.chunk(results, 3);
+                console.log(products);
+                res.render('kids', { products: products });
+            })
+
+    },
+    listSale: function (req, res) {
+        db.Products.findAll({
+            where: {
+              category: 'Ofertas'
+            }
+          },
+          {raw : true})
+            .then(function (results) {
+                let products = _.chunk(results, 3);
+                console.log(products);
+                res.render('sale', { products: products });
+            })
+
+    },
     add: function (req, res) {
         res.render('product-create');
     },

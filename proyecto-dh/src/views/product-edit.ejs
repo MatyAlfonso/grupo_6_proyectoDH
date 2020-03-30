@@ -28,7 +28,7 @@
 
     <h1 style="margin-top: 3%">Crear productos: </h1>
     <div style="padding : 2%; margin-bottom:5%">
-        <form action="/products/edit/<%=product.id%>" method="POST">
+        <form action="/products/edit/<%=product.id%>" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="exampleInputEmail1">Nombre del producto</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name"
@@ -56,10 +56,10 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Imagen del producto</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" name="image" value="<%= product.image %>">
+                <input type="file" class="form-control" id="exampleInputPassword1" name="image" value="<%= product.image %>">
             </div>
 
-            <button type="submit" class="btn btn-dark btn-primary">Submit</button>
+            <button type="submit" class="btn btn-dark btn-primary">Actualizar</button>
         </form>
     </div>
 

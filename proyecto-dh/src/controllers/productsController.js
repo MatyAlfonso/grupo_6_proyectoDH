@@ -3,6 +3,7 @@ const router = express.Router();
 let db = require('../../database/models');
 let _= require('underscore');
 
+
 let productsController = {
 
     detail: function (req, res) {
@@ -87,7 +88,7 @@ let productsController = {
             category: req.body.category,
             colors: req.body.colors,
             price: req.body.price,
-            image: req.body.image
+            image: req.files[0].filename
         })
         res.redirect("/products/products-list");
     },
@@ -104,7 +105,7 @@ let productsController = {
             category: req.body.category,
             colors: req.body.colors,
             price: req.body.price,
-            image: req.body.image
+            image: req.files[0].filename
         }, {
             where: {
                 id: req.params.id

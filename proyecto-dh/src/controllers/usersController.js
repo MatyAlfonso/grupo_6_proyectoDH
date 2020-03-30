@@ -25,7 +25,7 @@ let usersController = {
             lastName: req.body.lastName,
             email: req.body.email,
             password: passwordEncriptada,
-            image: req.body.image
+            image: req.files[0].filename
         })
 
         return res.redirect(301, '/users/login');
@@ -80,14 +80,14 @@ let usersController = {
                 res.render('user-edit', { user: user })
             })
     },
-    update: function (req, res) {
+    update: function (req, res, next) {
         let passwordEncriptada = bcrypt.hashSync(req.body.password, 10);
         db.Users.update({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
             password: passwordEncriptada,
-            image: req.body.image
+            image: req.files[0].filename
         }, {
             where: {
                 id: req.params.id

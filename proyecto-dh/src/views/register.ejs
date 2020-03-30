@@ -18,7 +18,7 @@
     <div class="container" style="margin-top: 100px;">
         <div class="row">
             <div class="col-sm">
-                <form action="/users/register" method="post">
+                <form action="/users/register" method="post" enctype="multipart/form-data">
 
                     <% if (typeof errors !== 'undefined') {
             errors.map(function (error) { %>
@@ -57,7 +57,7 @@
 
                                 <div class="form-group">
                                     <label for="">Cargar imagen de usuario</label>
-                                    <input type="text" name="image" class="form-control"
+                                    <input type="file" name="image" class="form-control"
                                         value="<%= typeof data != 'undefined' ? data.image : '' %>">
                                 </div>
 

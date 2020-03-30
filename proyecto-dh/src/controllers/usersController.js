@@ -66,7 +66,7 @@ let usersController = {
         res.redirect("/");
     },
     welcome: function (req, res) {
-        res.end(`Bienvenido: ` + req.session.usuarioLogueado.email);
+        res.redirect("/");
     },
     profile: function (req, res) {
         db.Users.findByPk(req.session.usuarioLogueado.id)

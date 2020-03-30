@@ -1,13 +1,13 @@
 *{
-  font-family: "Roboto", sans-serif;
+  font-family: 'Lora', serif;
 }
 
 body {
   height: 100vh;
   padding-top: 56px;
   margin: 0;
-  background: url(https://wallpaperaccess.com/full/446984.jpg) no-repeat center;   
-  background-size: cover;
+  /*background: url(https://wallpaperaccess.com/full/446984.jpg) no-repeat center;   
+  background-size: cover;*/
   
 }
 a {
@@ -15,6 +15,10 @@ a {
   text-decoration: none;
   background-color: transparent;
 }
+h1{
+  text-align: center;
+}
+
 
 /*NavBar*/
 img.img-fluid.d-block.mx-auto{
@@ -32,6 +36,15 @@ input.form-control.btn-outline-dark.mr-sm-2{
 }
 div.container.products-wrapper{
   margin-top: 20%;
+}
+
+/* Products */
+.card-deck{
+  margin: 10px;
+}
+div.card-deck div.card{
+ height: auto;
+ width: auto;
 }
 
 /*Cards*/

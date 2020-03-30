@@ -33,6 +33,12 @@ router.get('/check', function(req,res){
 
 /* profile */
 router.get('/profile', usersController.profile);
+/* Update */
+router.get('/edit/:id', usersController.edit);
+router.post('/edit/:id', usersController.update);
+
+/*router.get('/profile/:id/edit', usersController.detailProfile);
+router.post('/profile/:id/edit', usersController.editProfile);*/
 
 /* welcome */
 router.get('/welcome', usersController.welcome);
@@ -42,9 +48,7 @@ router.get('/add',usersController.add); //Ruta para la vista de creación de usu
 router.post('/add',usersController.create); //Ruta para crear usuarios manualmente
 router.get('/users-list', usersController.list); //Ruta para ver la lista de usuarios creados
 
-/* Update */
-router.get('/edit/:id', usersController.edit);
-router.post('/edit/:id', usersController.update);
+
 
 /* Delete */
 router.get('/delete/:id', usersController.detailDelete);

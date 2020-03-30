@@ -27,29 +27,41 @@
     <%- include('partials/headerNavbar') %>
 
     <body>
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                     <div class="card card-signin my-5">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Perfil</h5>
+                            <h5 class="card-title text-center">Mi perfil</h5>
                             <form class="form-signin">
                                 <div class="form-label-group">
-                                    <p style="text-align: center;">Avatar</p>
+                                    <img style=" width:300px;height:300px;border-radius:150px;display:block;margin:auto;" src="/images/products/<%= user.image %>">
                                 </div>
 
-                                <div style="text-align: center;" class="form-label-group">
-                                    <p>Nombre del usuario</p>
+                                <div style="text-align: center; margin-top: 10px;" class="form-label-group">
+                                    <h2><%=user.lastName%>, <%= user.firstName %></h2>
+                                    <h4><%= user.email %></h4>
                                 </div>
 
-                                <div style="text-align: end;" class="custom-control custom-checkbox mb-3">
-                                    <a><p>Editar perfil</p></a>
+                                <div style="text-align: center; padding: 0; margin-top: 30px;" class="custom-control custom-checkbox mb-3">
+                                    <a href="edit/<%=user.id%>">
+                                        <button type="button" class="btn btn-dark">
+                                            <p>Editar perfil</p>
+                                        </button>
+                                    </a>
+                                </div>
+                                <div style="text-align: center; padding: 0;">
+                                    <a href="/users/logout">
+                                        <button type="button" class="btn btn-dark">Cerrar sesión</button>
+                                    </a>
                                 </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </body>
 
     <!-- Footer -->

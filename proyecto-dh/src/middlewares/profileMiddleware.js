@@ -2,7 +2,7 @@ function profileMiddleware(req, res, next){
     if(req.session.usuarioLogueado == undefined){
         next();
     } else {
-        res.render('profile');
+        res.redirect('profile');
     }
 }
 

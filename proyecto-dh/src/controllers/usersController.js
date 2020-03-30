@@ -61,7 +61,7 @@ let usersController = {
             res.redirect(301, '/users/welcome');
         })
     },
-    logout : function(req,res){
+    logout: function (req, res) {
         req.session.destroy();
         res.redirect("/");
     },
@@ -69,40 +69,9 @@ let usersController = {
         res.end(`Bienvenido: ` + req.session.usuarioLogueado.email);
     },
     profile: function (req, res) {
-        res.render('profile');
-    },
-    editProfile: function (req, res) {
-        db.Users.update({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            password: passwordEncriptada,
-            image: req.body.image
-        }, {
-            where: {
-                id: req.params.id
-            }
-        })
-        res.redirect("/users/profile");
-    },
-    add: function (req, res) {
-        res.render('crearUsuario');
-    },
-    create: function (req, res) {
-        db.Users.create({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            password: req.body.password,
-            image: req.body.image
-        })
-
-        res.redirect("/users/users-list");
-    },
-    list: function (req, res) {
-        sequelize.query("SELECT * FROM users")
-            .then(function (results) {
-                let users = results[0];
-                res.render("users-list", { users: users });
+        db.Users.findByPk(req.session.usuarioLogueado.id)
+            .then(function (user) {
+                res.render('profile', { user: user })
             })
     },
     edit: function (req, res) {
@@ -125,6 +94,46 @@ let usersController = {
             }
         })
         res.redirect("/users/edit/" + req.params.id);
+    }/*,
+    detailProfile: function (req, res) {
+        db.Users.findByPk(req.session.usuarioLogueado.id)
+            .then(function (user) {
+                res.render('profile', { user: user })
+            })
+    },
+    editProfile: function (req, res) {
+        db.Users.update({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            password: passwordEncriptada,
+            image: req.body.image
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/users/profile");
+    }*/,
+    add: function (req, res) {
+        res.render('crearUsuario');
+    },
+    create: function (req, res) {
+        db.Users.create({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: req.body.password,
+            image: req.body.image
+        })
+
+        res.redirect("/users/users-list");
+    },
+    list: function (req, res) {
+        sequelize.query("SELECT * FROM users")
+            .then(function (results) {
+                let users = results[0];
+                res.render("users-list", { users: users });
+            })
     },
     detailDelete: function (req, res) {
         db.Users.findByPk(req.params.id)

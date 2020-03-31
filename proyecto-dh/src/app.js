@@ -37,12 +37,16 @@ var homeRouter = require('./routes/home');
 var productsRouter = require('./routes/products');
 var usersRouter = require('./routes/users');
 var chartRouter = require('./routes/chart');
+var apiProductsRouter = require('./routes/api/products');
+var apiUsersRouter = require('./routes/api/users');
 
 
 app.use('/', homeRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 app.use('/chart',chartRouter);
+app.use('/api/products', apiProductsRouter);
+app.use('/api/users', apiUsersRouter);
 
 // ************ DON'T TOUCH FROM HERE ************
 // catch 404 and forward to error handler

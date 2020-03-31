@@ -56,7 +56,7 @@ let usersController = {
 
             if (req.body.recordarme != undefined) {
                 res.cookie("recordarme",
-                    usuarioALoguearse.email, { maxAge: 60000 })
+                    user.email, { maxAge: 60000 })
             }
             res.redirect(301, '/users/welcome');
         })

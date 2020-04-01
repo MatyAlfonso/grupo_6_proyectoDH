@@ -19,6 +19,15 @@ h1{
   text-align: center;
 }
 
+.card-image{
+  display: block;
+  margin: auto;
+}
+
+.size{
+  width: 350px;
+  height: 530px;
+}
 
 /*NavBar*/
 img.img-fluid.d-block.mx-auto{

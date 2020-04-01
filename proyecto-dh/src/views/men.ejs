@@ -34,11 +34,11 @@
         <div class="card-deck">
             <% fila.forEach(function(product){ %>
             <div class="card">
-                <img src="/images/products/<%= product.image %>">
+                <img class="size" style="display: block; margin: auto;" src="/images/products/<%= product.image %>">
                 <div class="card-body">
-                    <h5 class="card-title"><%= product.name %></h5>
-                    <p class="card-text">$<%= product.price %></p>
-                    <button type="button" class="btn btn-dark"><a href="/products/product-detail/<%= product.id %>">Ver más</a></button>
+                    <h5 style="text-align: center;" class="card-title"><%= product.name %></h5>
+                    <p style="text-align: center;" class="card-text">$<%= product.price %></p>
+                    <button style="display: block; margin: auto;" type="button" class="btn btn-dark"><a href="/products/product-detail/<%= product.id %>">Ver más</a></button>
                 </div>
             </div>
             <% }) %>

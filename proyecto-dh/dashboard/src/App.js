@@ -7,6 +7,7 @@ import Card from './Card';
 import Card1 from './Card1';
 import Card2 from './Card2';
 import BigCard from './BigCard';
+import CategoryCard from './CategoryCard';
 
 function App() {
   return (
@@ -56,34 +57,10 @@ function App() {
                   </div>
                   <div className="card-body">
                     <div className="row">
-                      <div className="col-lg-6 mb-4">
-                        <div className="card bg-info text-white shadow">
-                          <div className="card-body">
-                            Categoría 01
-												</div>
-                        </div>
-                      </div>
-                      <div className="col-lg-6 mb-4">
-                        <div className="card bg-info text-white shadow">
-                          <div className="card-body">
-                            Categoría 02
-												</div>
-                        </div>
-                      </div>
-                      <div className="col-lg-6 mb-4">
-                        <div className="card bg-info text-white shadow">
-                          <div className="card-body">
-                            Categoría 03
-												</div>
-                        </div>
-                      </div>
-                      <div className="col-lg-6 mb-4">
-                        <div className="card bg-info text-white shadow">
-                          <div className="card-body">
-                            Categoría 04
-												</div>
-                        </div>
-                      </div>
+                      < CategoryCard value="Hombres" />
+                      < CategoryCard value="Mujeres"/>
+                      < CategoryCard value="Kids" />
+                      < CategoryCard value="Ofertas"/>                     
                     </div>
                   </div>
                 </div>

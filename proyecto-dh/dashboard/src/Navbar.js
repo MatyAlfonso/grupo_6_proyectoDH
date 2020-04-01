@@ -7,7 +7,7 @@ function Navbar() {
         <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div className="sidebar-brand-icon">
-                <img className="img-profile rounded-circle" src="images/logo.jpeg" width="60" />
+                <a href="http://localhost:3000/"><img className="img-profile rounded-circle" src="images/logo.jpeg" width="60" /></a>
                 </div>
                 <div className="sidebar-brand-text mx-3">Admin</div>
             </a>
@@ -23,6 +23,13 @@ function Navbar() {
             <hr className="sidebar-divider" />
 
             <div className="sidebar-heading">Acciones</div>
+
+            <li className="nav-item">
+                <a className="nav-link collapsed" target="_blank" rel="nofollow" href={"http://localhost:3000/products/products-list"}>
+                <i className="fas fa-list-ul"></i>
+                    <span>Lista de productos</span>
+                </a>
+            </li>
 
             <li className="nav-item">
                 <a className="nav-link collapsed" target="_blank" rel="nofollow" href={"http://localhost:3000/products/product-create"}>

@@ -9,13 +9,13 @@ function TopMenu() {
 
             <ul className="navbar-nav ml-auto">
 
-                
+
 
                 <div className="topbar-divider d-none d-sm-block"></div>
 
                 <li className="nav-item dropdown no-arrow">
-                    <a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-                        <span className="mr-2 d-none d-lg-inline text-gray-600 small">J&M Clothes</span>
+                    <a className="nav-link dropdown-toggle" href="http://localhost:3000/users/logout" id="userDropdown">
+                        <span className="mr-2 d-none d-lg-inline text-gray-600 medium">Cerrar sesión</span>
                         <img className="img-profile rounded-circle" src="images/logo.jpeg" width="60" />
                     </a>
                 </li>

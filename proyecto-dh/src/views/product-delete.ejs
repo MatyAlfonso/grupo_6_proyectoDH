@@ -27,10 +27,13 @@
     </div>
     <div style="padding:3%">
         <h1><%=product.name%></h1>
+        <img style="display: block; margin: auto;"src="/images/products/<%= product.image %>">
+        
+
 
         <form action="/products/delete/<%=product.id%>" method="POST">
 
-            <button type="submit" class="btn btn-dark btn-primary">Borrar producto</button>
+            <button style="display: block; margin: auto; margin-top:10px;" type="submit" class="btn btn-dark btn-primary">Borrar producto</button>
 
         </form>
     </div>

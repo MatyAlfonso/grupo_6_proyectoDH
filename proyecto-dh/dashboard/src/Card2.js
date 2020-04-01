@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Card extends Component {
+class Card2 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,7 +18,7 @@ class Card extends Component {
 
     componentDidMount() {
         console.log("Me monté!");
-        this.apiCall("http://localhost:3000/api/products", this.mostrarProducto)
+        this.apiCall("http://localhost:3000/api/users", this.mostrarProducto)
     }
 
     mostrarProducto = (data) => {
@@ -60,5 +60,5 @@ class Card extends Component {
 
     }
 }
-export default Card;
+export default Card2;
 

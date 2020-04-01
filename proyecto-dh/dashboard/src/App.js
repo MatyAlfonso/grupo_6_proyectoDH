@@ -4,6 +4,8 @@ import './App.css';
 import Navbar from './Navbar';
 import TopMenu from './TopMenu';
 import Card from './Card';
+import Card1 from './Card1';
+import Card2 from './Card2';
 
 function App() {
   return (
@@ -25,17 +27,14 @@ function App() {
             <div className="row">
               <Card
                 title="Total de productos en la Base de Datos"
-                value="135"
                 icon="fas fa-clipboard-list fa-2x text-gray-300" />
 
-              <Card
-                title="Total de categorías"
-                value="4"
+              <Card1
+                title="Total de productos por categorías"
                 icon="fas fa-align-left fa-2x text-gray-300" />
 
-              <Card
+              <Card2
                 title="Cantidad total de usuarios"
-                value="38"
                 icon="fas fa-user-check fa-2x text-gray-300" />
             </div>
 
@@ -47,7 +46,7 @@ function App() {
                   </div>
                   <div className="card-body">
                     <div className="text-center">
-                      <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src="images/dummy-avatar.jpg" alt="image dummy" />
+                      <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src="images/12.jpg" alt="image dummy" />
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa exercitationem ratione?</p>
                     <button type="button" className="btn btn-dark"><a target="_blank" rel="nofollow" href="/">Ver detalle del producto</a></button>

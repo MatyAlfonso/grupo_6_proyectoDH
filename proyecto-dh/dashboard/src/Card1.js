@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Card extends Component {
+class Card1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: ""
+            value: "",
+            value1: "",
+            value2: "",
+            value3: ""
         }
     }
 
@@ -24,7 +27,11 @@ class Card extends Component {
     mostrarProducto = (data) => {
         this.setState(
             {
-                value: data.meta.count
+                value: data.meta.countByCategory.Hombres,
+                value1: data.meta.countByCategory.Mujeres,
+                value2: data.meta.countByCategory.Kids,
+                value3: data.meta.countByCategory.Ofertas
+
             }
         )
     }
@@ -45,8 +52,11 @@ class Card extends Component {
                                 <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                     {this.props.title}
                                 </div>
-                                <div className="h3 mb-0 font-weight-bold text-gray-800">
-                                    {this.state.value}
+                                <div className="h7 mb-0 font-weight-bold text-gray-800">
+                                    <p>• Hombres: {this.state.value}</p>
+                                    <p>• Mujeres: {this.state.value1}</p>
+                                    <p>• Kids: {this.state.value2}</p>
+                                    <p>• Ofertas: {this.state.value3}</p>
                                 </div>
                             </div>
                             <div className="col-auto">
@@ -60,5 +70,5 @@ class Card extends Component {
 
     }
 }
-export default Card;
+export default Card1;
 

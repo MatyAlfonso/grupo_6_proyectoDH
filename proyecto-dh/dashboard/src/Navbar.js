@@ -5,7 +5,7 @@ function Navbar() {
         <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div className="sidebar-brand-icon">
-                    <i className="fas fa-chart-line"></i>
+                <img className="img-profile rounded-circle" src="images/logo.jpeg" width="60" />
                 </div>
                 <div className="sidebar-brand-text mx-3">Admin</div>
             </a>
@@ -24,20 +24,20 @@ function Navbar() {
 
             <li className="nav-item">
                 <a className="nav-link collapsed" href="/">
-                    <i className="fas fa-fw fa-folder"></i>
+                <i className="fas fa-plus-square"></i>
                     <span>Cargar producto</span>
                 </a>
             </li>
 
             <li className="nav-item">
                 <a className="nav-link" href="/">
-                    <i className="fas fa-fw fa-chart-area"></i>
+                <i className="fas fa-edit"></i>
                     <span>Editar producto</span></a>
             </li>
 
             <li className="nav-item">
                 <a className="nav-link" href="/">
-                    <i className="fas fa-fw fa-table"></i>
+                <i className="fas fa-trash-alt"></i>
                     <span>Eliminar producto</span></a>
             </li>
 

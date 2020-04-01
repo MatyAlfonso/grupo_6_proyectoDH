@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Navbar from './NavBar';
+import Navbar from './Navbar';
 import TopMenu from './TopMenu';
 import Card from './Card';
 
@@ -19,22 +19,22 @@ function App() {
           <div className="container-fluid">
 
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-              <h1 className="h3 mb-0 text-gray-800">J&M Dashboard</h1>
+              <h1 className="h3 mb-0 text-gray-800">J&M Clothes Dashboard</h1>
             </div>
 
             <div className="row">
               <Card
-                title="Productos en la Base de Datos"
+                title="Total de productos en la Base de Datos"
                 value="135"
                 icon="fas fa-clipboard-list fa-2x text-gray-300" />
 
               <Card
-                title="Cantidad de $ en productos"
-                value="$546.456"
-                icon="fas fa-dollar-sign fa-2x text-gray-300" />
+                title="Total de categorías"
+                value="4"
+                icon="fas fa-align-left fa-2x text-gray-300" />
 
               <Card
-                title="Cantidad de usuarios"
+                title="Cantidad total de usuarios"
                 value="38"
                 icon="fas fa-user-check fa-2x text-gray-300" />
             </div>

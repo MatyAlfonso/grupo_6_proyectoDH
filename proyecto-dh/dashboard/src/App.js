@@ -6,6 +6,7 @@ import TopMenu from './TopMenu';
 import Card from './Card';
 import Card1 from './Card1';
 import Card2 from './Card2';
+import BigCard from './BigCard';
 
 function App() {
   return (
@@ -44,13 +45,7 @@ function App() {
                   <div className="card-header py-3">
                     <h6 className="m-0 font-weight-bold text-primary">Último producto en la Base de Datos</h6>
                   </div>
-                  <div className="card-body">
-                    <div className="text-center">
-                      <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src="images/12.jpg" alt="image dummy" />
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa exercitationem ratione?</p>
-                    <button type="button" className="btn btn-dark"><a target="_blank" rel="nofollow" href="/">Ver detalle del producto</a></button>
-                  </div>
+                  <BigCard />
                 </div>
               </div>
 

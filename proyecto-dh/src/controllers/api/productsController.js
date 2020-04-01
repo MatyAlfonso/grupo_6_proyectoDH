@@ -45,7 +45,7 @@ let productsController = {
     find: function (req, res) {
         db.Products.findByPk(req.params.id)
             .then(function (product) {
-                product.setDataValue("imageURL", "/images/products/" + product.image)
+                product.setDataValue("imageURL", "http://localhost:3000/images/products/image-1585764910538.png" + product.image)
                 res.json(product);
             })
     }

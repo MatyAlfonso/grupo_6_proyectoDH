@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+
 function Navbar() {
     return (
         <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -23,20 +25,20 @@ function Navbar() {
             <div className="sidebar-heading">Acciones</div>
 
             <li className="nav-item">
-                <a className="nav-link collapsed" href="http://localhost:3000/products/product-create">
+                <a className="nav-link collapsed" target="_blank" rel="nofollow" href={"http://localhost:3000/products/product-create"}>
                 <i className="fas fa-plus-square"></i>
                     <span>Cargar producto</span>
                 </a>
             </li>
 
             <li className="nav-item">
-                <a className="nav-link" href="http://localhost:3000/products/edit/">
+                <a className="nav-link" target="_blank" rel="nofollow" href="http://localhost:3000/products/edit/">
                 <i className="fas fa-edit"></i>
                     <span>Editar producto</span></a>
             </li>
 
             <li className="nav-item">
-                <a className="nav-link" href="http://localhost:3000/products/delete/">
+                <a className="nav-link" target="_blank" rel="nofollow" href="http://localhost:3000/products/delete/">
                 <i className="fas fa-trash-alt"></i>
                     <span>Eliminar producto</span></a>
             </li>

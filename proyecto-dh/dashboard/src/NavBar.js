@@ -20,25 +20,25 @@ function Navbar() {
 
             <hr className="sidebar-divider" />
 
-            <div className="sidebar-heading">Actions</div>
+            <div className="sidebar-heading">Acciones</div>
 
             <li className="nav-item">
                 <a className="nav-link collapsed" href="/">
                     <i className="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <span>Cargar producto</span>
                 </a>
             </li>
 
             <li className="nav-item">
                 <a className="nav-link" href="/">
                     <i className="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                    <span>Editar producto</span></a>
             </li>
 
             <li className="nav-item">
                 <a className="nav-link" href="/">
                     <i className="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span>Eliminar producto</span></a>
             </li>
 
             <hr className="sidebar-divider d-none d-md-block" />

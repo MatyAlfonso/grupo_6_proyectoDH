@@ -18,6 +18,13 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top{
     padding-bottom: 30px;
 }
 
+img.card-img-top.img-fluid{
+    height: 530px;
+    display: block;
+    margin: auto;
+    width: 360px;
+}
+
 /*container*/
 div.container{
     position: relative;

@@ -38,7 +38,7 @@
                 <div class="card-body">
                     <h5 style="text-align: center;" class="card-title"><%= product.name %></h5>
                     <p style="text-align: center;" class="card-text">$<%= product.price %></p>
-                    <button style="display: block; margin: auto;" type="button" class="btn btn-dark"><a href="/products/product-detail/<%= product.id %>">Ver más</a></button>
+                    <a href="/products/product-detail/<%= product.id %>"><button style="display: block; margin: auto;" type="button" class="btn btn-dark">Ver más</button></a>
                 </div>
             </div>
             <% }) %>
